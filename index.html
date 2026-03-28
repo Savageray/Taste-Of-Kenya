@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste of Kenya | Authentic Kenyan Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+      /* Logo Styles with Your Actual Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #D35400;
+}
+
+.logo-text span {
+    color: #2C3E50;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+}
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #D35400;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #2C3E50;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2C3E50;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #D35400;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        /* Hero Section - Fixed Background */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://res.cloudinary.com/dgj0jpgsc/image/upload/v1774686181/The-12-Most-Famous-Restaurants-in-Nairobi-ETIC-Hotels_ml2wiw.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #D35400;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #E67E22;
+        }
+        
+        /* Menu Section */
+        .menu {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2C3E50;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-card-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-card h3 {
+            margin-bottom: 0.5rem;
+            color: #2C3E50;
+        }
+        
+        .price {
+            color: #D35400;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container">
+        <!-- Your Actual Logo -->
+        <a href="#" class="logo">
+            <img src="https://res.cloudinary.com/dgj0jpgsc/image/upload/v1774687633/Untitled_design_sruttc.png" alt="Taste of Kenya" class="logo-img">
+            <span class="logo-text">Taste of <span>Kenya</span></span>
+        </a>
+        
+        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section - Fixed -->
+<section class="hero" id="home">
+    <div class="container">
+        <h1>Welcome to Taste of Kenya</h1>
+        <p>Experience the authentic flavors of Kenyan cuisine</p>
+        <a href="#menu" class="btn">View Our Menu</a>
+    </div>
+</section>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">Our Signature Dishes</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://res.cloudinary.com/dgj0jpgsc/image/upload/v1774686404/Nyama-Choma-IG-1_uwmlsh.jpg" alt="Nyama Choma">
+                    <div class="menu-card-content">
+                        <h3>Nyama Choma</h3>
+                        <p>Grilled meat served with kachumbari and ugali</p>
+                        <div class="price">KES 800</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://res.cloudinary.com/dgj0jpgsc/image/upload/v1774686399/images_eglux1.jpg" alt="Ugali Fish">
+                    <div class="menu-card-content">
+                        <h3>Ugali na Fish</h3>
+                        <p>Fresh tilapia served with ugali and sukuma wiki</p>
+                        <div class="price">KES 600</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://res.cloudinary.com/dgj0jpgsc/image/upload/v1774686405/East-African-Pilau-Kenyan-pilau_uienti.jpg" alt="Pilau">
+                    <div class="menu-card-content">
+                        <h3>Beef Pilau</h3>
+                        <p>Aromatic spiced rice with tender beef</p>
+                        <div class="price">KES 450</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://res.cloudinary.com/dgj0jpgsc/image/upload/v1774687633/Untitled_design_sruttc.png" alt="Restaurant">
+                </div>
+                <div class="about-content">
+                    <h2>About Us</h2>
+                    <p>Founded in 2023, Taste of Kenya brings authentic Kenyan flavors to the heart of Nairobi. We use fresh, locally-sourced ingredients to create dishes that remind you of home.</p>
+                    <p>Our chefs are passionate about preserving traditional recipes while adding a modern twist. Come experience the true taste of Kenya!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Make a Reservation</h2>
+            <div class="contact-grid">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" placeholder="Reservation Date">
+                    </div>
+                    <div class="form-group">
+                        <input type="time" placeholder="Time">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Number of Guests">
+                    </div>
+                    <button type="submit" class="btn">Book Table</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> 0712-733-412</p>
+                    <p><i class="fas fa-envelope"></i> info@tasteofkenya.co.ke</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sun: 11am - 10pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Taste of Kenya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
